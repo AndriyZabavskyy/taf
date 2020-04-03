@@ -1,19 +1,7 @@
-pytest==3.0.0
-pyasn1>=0.1.9
-pysnmp>=4.3.2
-jira>=1.0.3
-Twisted==19.2.1
-pexpect==4.1.0
-enum34>=1.1.6
-jsonrpclib-pelix>=0.2.7
-netaddr==0.7.18
-paramiko>=2.0.1
-cryptography==1.7.1
-py2chainmap>=0.1.0
-pytest-xdist==1.24.1
-PyYAML==3.11
-Pygments>=2.1.3
-pcapy>=0.11.1
--e git+https://github.com/mike01/pypacker@master#egg=pypacker
-python-etcd>=0.4.3
-python-k8sclient>=0.3.0
+pytest==5.4.1
+netaddr==0.7.19
+paramiko==2.7.1
+cryptography==2.9
+pexpect==4.8.0
+pcapy==0.11.4
+pypacker==4.9

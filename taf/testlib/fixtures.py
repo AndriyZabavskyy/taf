@@ -27,10 +27,9 @@ import pytest
 
 from .helpers import grouper
 from . import loggers
-from .dev_linux_host import GenericLinuxHost
 
 
-def sshlog(request, env_name=None, env_obj=None, instance_class=GenericLinuxHost):
+def sshlog(request, env_name=None, env_obj=None, instance_class=object):
     """Register additional file handler for linux_host ssh loggers per test case.
 
     Args:

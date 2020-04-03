@@ -28,7 +28,7 @@ import pytest
 from testlib import common3
 from testlib import loggers
 
-pytest_plugins = ["plugins.pytest_returnvalues", ]
+pytest_plugins = []
 
 
 def pytest_addoption(parser):

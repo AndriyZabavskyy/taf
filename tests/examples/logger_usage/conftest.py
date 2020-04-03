@@ -30,10 +30,7 @@ def setup_scope():
     """Return setup_scope option value in global namespace`
 
     """
-    try:
-        _setup_scope = filter(lambda x: x.startswith("--setup_scope"), sys.argv)[0].split("=")[1]
-    except IndexError:
-        _setup_scope = "module"
+    _setup_scope = "module"
     return _setup_scope
 
 
@@ -42,8 +39,7 @@ class Env(object):
 
     """
     def __init__(self, request):
-        self.env = request.config.env
-        self.option = request.config.option
+        pass
 
     def create(self):
         self.env.initialize()
@@ -92,7 +88,4 @@ def sshlog(request):
 
     """
     # Check if env is used in TC and file logging is enabled
-    if "env" not in request.fixturenames or loggers.LOG_DIR is None:
-        return
-    # Call sshlog fixture template
-    fixtures.sshlog(request, "env")
+    return

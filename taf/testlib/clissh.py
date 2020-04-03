@@ -21,7 +21,6 @@
 import socket
 import time
 from io import StringIO
-import curses.ascii as ascii_char
 from contextlib import closing
 
 import paramiko
@@ -315,8 +314,6 @@ class CLISSH(CLIGenericMixin):
         data = self.action_on_expect(self.shell, alternatives, timeout, interval)
 
         # Clearing console line from previous command.
-        if tabulation:
-            self.shell.sendall(ascii_char.ctrl("u"))
 
         if not raw_output:
             data, return_code = self.normalize_output(data, command, ret_code, end_pattern)
