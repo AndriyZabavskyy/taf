@@ -52,11 +52,13 @@ RUN cd Python-3.8.2 && make
 RUN cd Python-3.8.2 && make install
 
 ARG TAF_ROOT=/root/taf
+RUN pip3 install pip -U
 COPY /  $TAF_ROOT/
+RUN pip3 install -r $TAF_ROOT/requirements.txt
 RUN export PYTHONPATH="$PYTHONPATH:/root/taf/taf"
-RUN python3 -m venv /root/taf/venv
-RUN /bin/bash -c "source /root/taf/venv/bin/activate && pip install pip -U"
-RUN /bin/bash -c "source /root/taf/venv/bin/activate && pip install -r $TAF_ROOT/requirements.txt"
+#RUN python3 -m venv /root/taf/venv
+#RUN /bin/bash -c "source /root/taf/venv/bin/activate && pip install pip -U"
+#RUN /bin/bash -c "source /root/taf/venv/bin/activate && pip install -r $TAF_ROOT/requirements.txt"
 
 
 #RUN test -r "$TAF_ROOT/unittests/ci/requirements.txt" && pip install -r $TAF_ROOT/unittests/ci/requirements.txt || true

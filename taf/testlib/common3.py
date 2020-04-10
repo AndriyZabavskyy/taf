@@ -216,14 +216,6 @@ class Environment(dict):
     def _find_dev_modules(self):
         # extract this so we can override in unittests
         devices = []
-        testlib_path = os.path.dirname(__file__)
-        for root, dirname, filenames in os.walk(testlib_path):
-            for m in filenames:
-                if m.startswith("dev_") and m.endswith(".py"):
-                    rel_path = os.path.relpath(os.path.join(root, m), testlib_path)
-                    # create module name relative to testlib
-                    # foo/dev_bar.py -> foo.dev_bar
-                    devices.append(os.path.splitext(rel_path)[0].replace(os.sep, '.'))
         return devices
 
     def _get_conf(self, file_name=None):

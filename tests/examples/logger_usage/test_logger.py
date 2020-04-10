@@ -60,8 +60,8 @@ class TestSSHLogger(object):
 
     log = loggers.ClassLogger()
 
-    def test_case_one(self, env):
-        # Here is suite logger. It's created by autolog fixture.
+    def test_case_one(self):
+
         self.log.info("I'm in TC one.")
         # For this command output the new file test_case_one_<PID>__id_<lhost id>_type_<lhost type>.log has to be created.
 
@@ -69,6 +69,6 @@ class TestSSHLogger(object):
         # This test function doesn't use env fixture, so ssh logging configuration has to be omitted.
         self.log.info("TC with no env fixture.")
 
-    def test_case_three(self, env):
+    def test_case_three(self):
         # The same as the first test function, but new file for ssh logs has to be created.
         self.log.info("I'm in TC tree.")
